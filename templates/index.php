@@ -6,27 +6,28 @@
 </head>
 <body>
 <div><h2>Contact Form</h2>
-<form
-  <div>
-    <input type="text" class="form-control" placeholder="Full Name">
-  </div><br>
-<div>
- <select class="form-control">
+<form action="index.php" method="POST">
+
+    <input type="text" class="form-control" name="fullname" placeholder="Full Name">
+<br>
+
+ <select class="form-control" name="subject">
   <option>Please,select</option>
-  <option>Subject 1</option>
+  <option selected>Subject 1</option>
   <option>Subject 2</option>
   <option>Subject 3</option>
 </select>
-</div><br>
-<div>
-  <input type="email" class="form-control" placeholder="E-mail">
-</div><br> 
-<div>
-    <textarea class="form-control" rows="3" placeholder="Your message"></textarea>
-</div><br>
-  <div>
-    <input class="btn btn-default" type="submit" value="Submit">
- </div><br>
+<br>
+
+  <input type="text" class="form-control" name="email"  placeholder="E-mail">
+<br> 
+
+    <textarea class="form-control" name="message" rows="3" placeholder="Your message"></textarea>
+<br>
+ 
+    <input class="btn btn-default" type="submit" value="Send">
+ <br>
+</form>
 </div>
 <div style="color: #FF0000; font-size: 15px;"><strong>%ERRORS%</strong></div>
 </body>
