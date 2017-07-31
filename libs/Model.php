@@ -6,12 +6,14 @@ class Model
   protected $message;
   protected $subject; 
   protected $email;
+  protected $headers;
    public function __construct()
    {
      $this -> fullname = $fullname;
      $this -> message = $message;
      $this -> subject =  $subject;
      $this -> email = $email;
+     $this -> headers = $headers;
    }
     
   public function getArray()
@@ -25,12 +27,16 @@ class Model
   }
    
   public function sendEmail()
-  {
+  { 
+    $headers = "From: $email\r\n"; 
+
+    $ip = $_SERVER['REMOTE_ADDR']; 
     $fullname = $_POST['fullname'];
     $message= $_POST['message'];
     $subject = $_POST['subject'];
     $email = $_POST['email'];
 
-    mail('maks1996.05.23@gmail.com',$subject,$message) or die("Error");
+   
+    mail('maks1996.05.23@gmail.com',$subject,$message,$headers) or die("Error");
   }   
 }
